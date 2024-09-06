@@ -1,48 +1,38 @@
-const courses = [
-    {
-        name: "Introduction to Machine Learning",
-        provider: "Coursera",
-        description: "Learn the basics of machine learning algorithms and their applications",
-        link: "https://www.coursera.org/learn/machine-learning",
-        icon: "./images/coursera-icon.png"
-    },
-    {
-        name: "Deep Learning Specialization",
-        provider: "Coursera",
-        description: "Master deep learning techniques and neural networks",
-        link: "https://www.coursera.org/specializations/deep-learning",
-        icon: "./images/coursera-icon.png"
-    },
-    {
-        name: "AI for Everyone",
-        provider: "Coursera",
-        description: "Non-technical course to understand AI's impact on society",
-        link: "https://www.coursera.org/learn/ai-for-everyone",
-        icon: "./images/coursera-icon.png"
-    }
-    // Add more courses here
-];
+export function renderCourses(container) {
+    container.innerHTML = `
+        <header class="py-16 text-center">
+            <h1 class="text-5xl font-bold mb-4 text-white">Free AI Courses</h1>
+            <p class="text-xl text-purple-200 mb-8">Learn AI with these top-rated free courses</p>
+        </header>
 
-function renderCourseCard(course) {
-    return `
-        <a href="${course.link}" target="_blank" rel="noopener noreferrer" class="course-card bg-white rounded-lg shadow-md overflow-hidden block">
-            <div class="p-4 flex flex-col h-full">
-                <div class="flex items-center mb-3">
-                    <img src="${course.icon}" alt="${course.provider} icon" class="w-10 h-10 mr-3 object-contain">
-                    <h2 class="text-lg font-semibold text-gray-800">${course.name}</h2>
-                </div>
-                <p class="text-sm text-gray-600 mb-3 flex-grow">${course.description}</p>
-                <div class="mt-auto">
-                    <span class="inline-block bg-blue-100 text-blue-800 rounded-full px-2 py-1 text-xs font-semibold">${course.provider}</span>
-                </div>
-            </div>
-        </a>
+        <main class="container mx-auto px-4 py-8">
+            <div id="courses-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </main>
     `;
+
+    const coursesGrid = container.querySelector('#courses-grid');
+    renderCourseCards(coursesGrid);
 }
 
-function renderCoursesGrid() {
-    const coursesGrid = document.getElementById('courses-grid');
-    coursesGrid.innerHTML = courses.map(renderCourseCard).join('');
-}
+function renderCourseCards(container) {
+    const courses = [
+        { title: "Introduction to Machine Learning", provider: "Coursera", duration: "8 weeks", image: "intro-ml.jpg" },
+        { title: "Deep Learning Specialization", provider: "deeplearning.ai", duration: "5 months", image: "deep-learning.jpg" },
+        { title: "AI for Everyone", provider: "Coursera", duration: "4 weeks", image: "ai-for-everyone.jpg" },
+        // Add more courses as needed
+    ];
 
-document.addEventListener('DOMContentLoaded', renderCoursesGrid);
+    courses.forEach(course => {
+        const card = document.createElement('div');
+        card.className = 'course-card bg-white bg-opacity-10 rounded-lg overflow-hidden shadow-lg';
+        card.innerHTML = `
+            <img src="images/courses/${course.image}" alt="${course.title}" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2">${course.title}</h3>
+                <p class="text-gray-300 mb-2">Provider: ${course.provider}</p>
+                <p class="text-gray-300">Duration: ${course.duration}</p>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
