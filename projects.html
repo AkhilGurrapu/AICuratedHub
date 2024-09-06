@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Projects - AICuratedHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen bg-gradient-to-b from-purple-900 to-indigo-900">
+    <nav class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <img class="h-8 w-auto mr-3" src="./images/logo.png" alt="Logo">
+                    <span class="text-white font-bold text-xl">AICuratedHub</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/projects.html" class="nav-link active">Projects</a>
+                    <a href="/courses.html" class="nav-link">Free Courses on AI</a>
+                </div>
+                <div>
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded">
+                        Subscribe
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-16 text-center">
+        <h1 class="text-5xl font-bold mb-4 text-white">Interesting AI Projects</h1>
+        <p class="text-xl text-purple-200 mb-8">Explore cutting-edge AI projects and innovations</p>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </main>
+
+    <script type="module" src="js/projects.js"></script>
+</body>
+</html>

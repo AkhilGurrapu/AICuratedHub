@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+}
+
+.tool-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    height: 100%; /* Ensure full height */
+}
+
+.tool-card > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tool-card:hover, .tool-card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    outline: none;
+}
+
+#tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.tool-card img {
+    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.tool-card .description {
+    flex-grow: 1;
+    min-height: 3em;
+    max-height: 4.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.category-filter button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease;
+}
+
+.category-filter button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.category-filter button.active {
+    background-color: #8B5CF6;
+}
+
+/* Add these styles to your existing styles.css file */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e9d5ff; /* A lighter purple for better contrast */
+}
+
+nav button {
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #7c3aed;
+}
+
+/* Add this new style for the logo and title */
+nav .flex.items-center span {
+    transition: color 0.3s ease;
+}
+
+nav:hover .flex.items-center span {
+    color: #e9d5ff;
+}
+
+/* Featured Tools Styles */
+.featured-tools-slider {
+    overflow: hidden;
+}
+
+.featured-tools-container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.featured-tool-card {
+    flex: 0 0 300px;
+    margin-right: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+
+.featured-tool-card:hover, .featured-tool-card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    outline: none;
+}
+
+.featured-tool-card img {
+    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.featured-tool-card .description {
+    min-height: 3em;
+    max-height: 4.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.slider-btn {
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.slider-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.featured-tools {
+    margin-bottom: 3rem;
+    padding: 1rem 0;
+}
+
+.search-bar input {
+    transition: all 0.3s ease;
+}
+
+.search-bar input:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(167, 139, 250, 0.3);
+}
+
+.project-card, .course-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-card:hover, .project-card:focus,
+.course-card:hover, .course-card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    outline: none;
+}
+
+.nav-link {
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e9d5ff;
+}
+
+.nav-link.active {
+    background-color: #8B5CF6; /* Vibrant purple background */
+    color: #ffffff; /* White text */
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5); /* Subtle glow effect */
+}
+
+.nav-link.active:hover {
+    background-color: #7C3AED; /* Slightly darker purple on hover */
+}
